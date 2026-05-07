@@ -1,63 +1,44 @@
 
 //Kobi Nance spring 2026
 
-
-
 #include <iostream>
 #include <string>
 
-
-
 using namespace std;
 
-
-
 class critter {
-     private:
-string name;
-int startingHealth = 20;
-int baseDamageToOtherCritter = 5;
-int health;
-
-
-
- public:
- critter(string givenName)
-{
- name = givenName;
-
- cout << "what name would you like to use, or type 'done' to stop\n";
-        cin >> input;
-
-         if (input == "done") {
-            cout << "we are done entering a name\n";
-            break;
-         }
-
-
-
-health = startingHealth;
-
-
-
-return;
-}
-
-
-
-int RemainingHealth()
-{
-return health;
-}
-
-
-
-void DamageOnCritter(int Damage)
-{
-health = health - Damage;
-}
-
-
-
+   public:
+   string name;
 };
 
+int main() {
+string input;
+
+
+cout << "what would you like to name your critter?\n";
+cin >> input;
+while(true) {
+   cout << "what would you like to do?\n";
+cin >> input;
+
+   if(input == "feed") {
+      cout << "nom nom nom\n";
+   }
+   else if(input == "train") {
+      cout << "good job little guy!\n";
+   }
+   else if(input == "listen") {
+      cout << "thank you for listening to me!\n";
+   }
+   else if(input == "battle") {
+      cout << "an enemy is coming!\n";
+   }
+   else if(input == "") {
+      cout << "i did not understand how to do that!\n";
+   }
+   else if(input == "done") {
+      break;
+   }
+}
+return 0;
+}
