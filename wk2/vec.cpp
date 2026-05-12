@@ -106,7 +106,7 @@ if(chapter == 3) {
 
 cout << "lets give " << *chosenFriend << " a new name!\n";
 cin >> input;
-*chosenFriend = input;
+*chosenfriend = input;
 
 cout << "Their name is now " << *chosenFriend << ".\n";
 

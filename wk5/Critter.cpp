@@ -91,15 +91,22 @@ private:
    int damageMultiplier = 2;
    int healthMultiplier = 2;
 public:
-   bossCritter(string damageMultiplier, int healthMultiplier) {
-      name = "boss";
-      damage = damage * damageMultiplier;
-      health = health * healthMultiplier;
+   bossCritter(int damageMultiplier, int healthMultiplier)
+  
+   {
+      
+critter::critter("boss", critter::getHealth() * healthMultiplier, critter::getDamage() * damageMultiplier, 7);
+    
+
+     // name = "boss";
+     // damage = damage * damageMultiplier;
+     // health = health * healthMultiplier;
    }
     bool attack(critter& oppenent) {
-      oppenent.health -= damage;
-      cout << name << " has done " << damage << " damage to ";
-      cout << oppenent.name << ".\n";
+      int OppenentCurrentHealth = oppenent.getHealth();
+      oppenent.setHealth(OppenentCurrentHealth - getDamage());
+      cout << getName() << " has done " << getDamage() << " damage to ";
+      cout << oppenent.getName() << ".\n";
 
       if(oppenent.health <= 0) {
          return true;
